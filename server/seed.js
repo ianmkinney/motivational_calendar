@@ -1,6 +1,6 @@
 //requiring depencies that will allow us to promise chain and find our JSON files
 const path = require('path')
-const fs = require ('fs')
+const fs = require ('fs').promises
 
 //importing our data base and models
 const {db} = require ('./db') //update 
@@ -19,9 +19,9 @@ const seed = async () => {
 
     //reading the file and converting it into a JS object
     const userBuffer = await fs.readFile(user_seedPath)
-    const motivationBuffer = await fs.readFile(motivation_seedPath)
+    const {user_data} = JSON.parse(String(userBuffer))
 
-    const {user_data} = JSON.parse(String(userBuffer))//update data name!! 
+    const motivationBuffer = await fs.readFile(motivation_seedPath)
     const {data} = JSON.parse(String(motivationBuffer))
 
     //resolving the promises 
