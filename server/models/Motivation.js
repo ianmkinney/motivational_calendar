@@ -5,7 +5,7 @@ class Motivation extends Model {
 }
 
 Motivation.init({
-    content: DataTypes.STRING,
+    quote: DataTypes.STRING,
     author: DataTypes.STRING,
    
 },{
