@@ -22777,8 +22777,10 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 // import components
-//import Quotes from './Qutoes'
-//import Users from './Users'
+var _quotes = require("./Quotes");
+var _quotesDefault = parcelHelpers.interopDefault(_quotes);
+var _users = require("./Users");
+var _usersDefault = parcelHelpers.interopDefault(_users);
 var _calendar = require("./Calendar");
 var _calendarDefault = parcelHelpers.interopDefault(_calendar);
 // import react-dom-router dependencies
@@ -22792,6 +22794,24 @@ function Routes() {
         __self: this,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                to: "/quotes",
+                __source: {
+                    fileName: "src/Routes.js",
+                    lineNumber: 20
+                },
+                __self: this,
+                children: "Quotes"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                to: "/users",
+                __source: {
+                    fileName: "src/Routes.js",
+                    lineNumber: 21
+                },
+                __self: this,
+                children: "Users"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                 to: "/calendar",
                 __source: {
                     fileName: "src/Routes.js",
@@ -22800,21 +22820,41 @@ function Routes() {
                 __self: this,
                 children: "Calendar"
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Switch, {
+            /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Switch, {
                 __source: {
                     fileName: "src/Routes.js",
                     lineNumber: 24
                 },
                 __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                    path: "/calendar",
-                    component: _calendarDefault.default,
-                    __source: {
-                        fileName: "src/Routes.js",
-                        lineNumber: 27
-                    },
-                    __self: this
-                })
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        path: "/quotes",
+                        component: _quotesDefault.default,
+                        __source: {
+                            fileName: "src/Routes.js",
+                            lineNumber: 25
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        path: "/users",
+                        component: _usersDefault.default,
+                        __source: {
+                            fileName: "src/Routes.js",
+                            lineNumber: 26
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        path: "/calendar",
+                        component: _calendarDefault.default,
+                        __source: {
+                            fileName: "src/Routes.js",
+                            lineNumber: 27
+                        },
+                        __self: this
+                    })
+                ]
             })
         ]
     }));
@@ -22829,7 +22869,7 @@ $RefreshReg$(_c, "Routes");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","./Calendar":"laxuJ","react-router-dom":"etVME","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"laxuJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","./Calendar":"laxuJ","react-router-dom":"etVME","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","./Users":"9Olzx","./Quotes":"akNbZ"}],"laxuJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$098e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -30439,6 +30479,280 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 }
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"5KyfE"}],"h17IM":[function() {},{}]},["emU3S","lBB98","hD4hw"], "hD4hw", "parcelRequiree46b")
+},{"react-is":"5KyfE"}],"9Olzx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b03e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b03e.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+function Users() {
+    _s();
+    // React hook
+    // Store, update, and use data within this functional component
+    // [storage, setMusic] how your state will be initialize when your component renders
+    const [users, setUsers] = _react.useState([]);
+    // write a function that will make a fetch request to our server
+    async function fetchUsers() {
+        // try catch block
+        // try something, if it doesn't work, it will go straight to the catch block
+        try {
+            const response = await fetch('http://localhost:3000/allUsers');
+            const responseJSON = await response.json();
+            // update users storage []
+            setUsers(responseJSON);
+        } catch  {
+            console.log('Fetching users failed!');
+        }
+    }
+    // invoke useEffect
+    // useEffect is a callback after your component renders, function
+    _react.useEffect(()=>{
+        // call fetchMusic to fill music[]
+        fetchUsers();
+    }, []) // Second parameter of useEffect must match useState() parameter
+    ;
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        __source: {
+            fileName: "src/Users.js",
+            lineNumber: 32
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                __source: {
+                    fileName: "src/Users.js",
+                    lineNumber: 33
+                },
+                __self: this,
+                children: "Users:"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("table", {
+                __source: {
+                    fileName: "src/Users.js",
+                    lineNumber: 34
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsxs("tr", {
+                        __source: {
+                            fileName: "src/Users.js",
+                            lineNumber: 35
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("td", {
+                                __source: {
+                                    fileName: "src/Users.js",
+                                    lineNumber: 36
+                                },
+                                __self: this,
+                                children: "Name"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("td", {
+                                __source: {
+                                    fileName: "src/Users.js",
+                                    lineNumber: 37
+                                },
+                                __self: this,
+                                children: "username"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("td", {
+                                __source: {
+                                    fileName: "src/Users.js",
+                                    lineNumber: 38
+                                },
+                                __self: this,
+                                children: "password"
+                            })
+                        ]
+                    }),
+                    users.map((user)=>{
+                        return(/*#__PURE__*/ _jsxRuntime.jsxs("tr", {
+                            __source: {
+                                fileName: "src/Users.js",
+                                lineNumber: 41
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("td", {
+                                    __source: {
+                                        fileName: "src/Users.js",
+                                        lineNumber: 42
+                                    },
+                                    __self: this,
+                                    children: user.name
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("td", {
+                                    __source: {
+                                        fileName: "src/Users.js",
+                                        lineNumber: 43
+                                    },
+                                    __self: this,
+                                    children: user.username
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("td", {
+                                    __source: {
+                                        fileName: "src/Users.js",
+                                        lineNumber: 44
+                                    },
+                                    __self: this,
+                                    children: user.password
+                                })
+                            ]
+                        }));
+                    })
+                ]
+            })
+        ]
+    }));
+}
+_s(Users, "JadZszbqna06PpJs9hMo7Hl/LOY=");
+_c = Users;
+exports.default = Users;
+var _c;
+$RefreshReg$(_c, "Users");
+
+  $parcel$ReactRefreshHelpers$b03e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"akNbZ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4927 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4927.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+function Quotes() {
+    _s();
+    // React hook
+    // Store, update, and use data within this functional component
+    // [storage, setMusic] how your state will be initialize when your component renders
+    const [quotes, setQuotes] = _react.useState([]);
+    // write a function that will make a fetch request to our server
+    async function fetchQuotes() {
+        // try catch block
+        // try something, if it doesn't work, it will go straight to the catch block
+        try {
+            const response = await fetch('http://localhost:3000/allMotivations');
+            const responseJSON = await response.json();
+            // update Quotes storage []
+            setQuotes(responseJSON);
+        } catch  {
+            console.log('Fetching Quotes failed!');
+        }
+    }
+    // invoke useEffect
+    // useEffect is a callback after your component renders, function
+    _react.useEffect(()=>{
+        // call fetchMusic to fill quote[]
+        fetchQuotes();
+    }, []) // Second parameter of useEffect must match useState() parameter
+    ;
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        __source: {
+            fileName: "src/Quotes.js",
+            lineNumber: 32
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                __source: {
+                    fileName: "src/Quotes.js",
+                    lineNumber: 33
+                },
+                __self: this,
+                children: "Quotes:"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("table", {
+                __source: {
+                    fileName: "src/Quotes.js",
+                    lineNumber: 34
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsxs("tr", {
+                        __source: {
+                            fileName: "src/Quotes.js",
+                            lineNumber: 35
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("td", {
+                                __source: {
+                                    fileName: "src/Quotes.js",
+                                    lineNumber: 36
+                                },
+                                __self: this,
+                                children: "Quote"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("td", {
+                                __source: {
+                                    fileName: "src/Quotes.js",
+                                    lineNumber: 37
+                                },
+                                __self: this,
+                                children: "Author"
+                            })
+                        ]
+                    }),
+                    quotes.map((quote)=>{
+                        return(/*#__PURE__*/ _jsxRuntime.jsxs("tr", {
+                            __source: {
+                                fileName: "src/Quotes.js",
+                                lineNumber: 40
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("td", {
+                                    __source: {
+                                        fileName: "src/Quotes.js",
+                                        lineNumber: 41
+                                    },
+                                    __self: this,
+                                    children: quote.quote
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("td", {
+                                    __source: {
+                                        fileName: "src/Quotes.js",
+                                        lineNumber: 42
+                                    },
+                                    __self: this,
+                                    children: quote.author
+                                })
+                            ]
+                        }));
+                    })
+                ]
+            })
+        ]
+    }));
+}
+_s(Quotes, "SUU9YDCVpUtZ6H24bwM60eqca2E=");
+_c = Quotes;
+exports.default = Quotes;
+var _c;
+$RefreshReg$(_c, "Quotes");
+
+  $parcel$ReactRefreshHelpers$4927.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"h17IM":[function() {},{}]},["emU3S","lBB98","hD4hw"], "hD4hw", "parcelRequiree46b")
 
 //# sourceMappingURL=index.379dd93c.js.map
