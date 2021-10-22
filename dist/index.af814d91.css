@@ -1,0 +1,18 @@
+table, tr, td {
+    border: 2px solid black;
+    width: 50%;
+    text-align: center;
+}
+
+button.block {
+    width:50%;
+}
+
+h1 {
+    width: 50%;
+}
+
+a {
+    padding: 5%;
+}
+/*# sourceMappingURL=index.af814d91.css.map */
