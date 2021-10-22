@@ -15,6 +15,11 @@ seed()
 app.use(express.json())
 app.use(cors())
 
+//-----------ROUTES-----------------------
+app.get('/', async (req, res) => {
+    res.send (200)
+})
+
 // set up app to listen on set port
 app.listen( PORT, () => {
     console.log(`Your server is now listening to port ${PORT}`)
