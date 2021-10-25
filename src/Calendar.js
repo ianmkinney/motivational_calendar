@@ -1,21 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react'
 import Calendar from 'react-calendar';
 
-function myCalendar() {
+class myCalendar extends React.Component {
+  state = {
+    date:new Date(),
+    quote: "",
+    author: ""
+  };
 
-  const [value, onChange] = useState(new Date());
+  handleClick = async (d) => {
+    const response = await fetch("http://localhost:3000/getMotivation")
+    const responseJSON = await response.json()
+    console.log(responseJSON.quote)
+    this.setState({
+      date:d,
+      quote:responseJSON.quote,
+      author:responseJSON.author
+    })
+  }
 
-  
-
-  return (
-    <div>
-      <h1>Affirmation Calendar:</h1>
-      <Calendar
-        onChange={onChange}
-        value={value}
-      />
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        <h1>Motivational Calendar</h1>
+        <p>Selected date: {this.state.date.toDateString()}</p>
+        <p>{this.state.quote}</p>
+        <p>- {this.state.author}</p>
+        <Calendar onClickDay={this.handleClick}/>
+      </div>
+    );
+  }
 }
 
 export default myCalendar;
