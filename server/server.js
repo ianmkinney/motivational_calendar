@@ -48,6 +48,7 @@ app.get('/allUsers', async (req,res) => {
     return res.json(users)
 })
 
+//Route to assign a user to a quote //
 app.put('/motivation/:id', async(req, res) => {
     let pk = req.params.id
     let motivation = await Motivation.findByPk(pk)
@@ -63,7 +64,15 @@ app.put('/motivation/:id', async(req, res) => {
 
 })
 
-// set up app to listen on set port
+//Route to create add a quote to the db
+app.post('/motivation/add', async(req, res) => {
+   
+        await Motivation.create({ quote: 'Education is the most powerful weapon which you can use to change the world', author:'Nelson Mandela'})
+        res.send(`New Quote Added`)  
+  
+})
+
+//set up app to listen on set port
 app.listen( PORT, () => {
     console.log(`Your server is now listening to port ${PORT}`)
 })

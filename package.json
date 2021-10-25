@@ -1,51 +1,33 @@
 {
-  "name": "motivational_calendar",
-  "version": "0.1.0",
-  "private": true,
+  "name": "motivation-calendar",
+  "version": "1.0.0",
+  "description": "## Overview For this project, we are creating a calendar that will show an inspirational quote for each date the user clicks on. More updates coming soon!",
+  "main": "index.js",
+  "scripts": {
+    "start": " nodemon server/server.js",
+    "start-dev": "parcel nodemon public/index.html --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianmkinney/motivational_calendar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianmkinney/motivational_calendar/issues"
+  },
+  "homepage": "https://github.com/ianmkinney/motivational_calendar#readme",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "install": "^0.13.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.14",
-    "npm": "^8.1.1",
-    "parcel": "^2.0.0",
     "react": "^17.0.2",
-    "react-calendar": "^3.4.0",
-    "react-dom": "^17.0.2",
+    "react-calendar": "^3.5.0",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
-    "sequelize": "^6.7.0",
-    "sqlite3": "^5.0.2",
-    "web-vitals": "^1.1.2"
-  },
-  "scripts": {
-    "start-dev": "parcel public/index.html --open",
-    "start": "nodemon server/server.js",
-    "build": "react-scripts nuild",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "sequelize": "^6.8.0",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
