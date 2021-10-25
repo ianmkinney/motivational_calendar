@@ -35975,7 +35975,39 @@ function myCalendar() {
 
 var _default = myCalendar;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-calendar":"../node_modules/react-calendar/dist/esm/index.js"}],"../node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-calendar":"../node_modules/react-calendar/dist/esm/index.js"}],"../src/AddQuoteForm.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var CreateQuote = function CreateQuote() {
+  //creating a react hook to store the quote body
+  // const [newQuote,setNewQuote] = useStates('')
+  // cosnt [QuoteAuthor, setQuoteAuthor] = useState('')
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "CreateQuote"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, " Add your quote below: "), /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("label", null, " Add quote content:"), /*#__PURE__*/_react.default.createElement("textarea", {
+    required: true
+  }), /*#__PURE__*/_react.default.createElement("label", null, " Quote author: "), /*#__PURE__*/_react.default.createElement("input", {
+    type: Text,
+    required: true // value = {QuoteAuthor}
+    // onChange ={ (e) => setQuoteAuthor(e.target.value)}
+
+  }), /*#__PURE__*/_react.default.createElement("button", null, " Submit "), /*#__PURE__*/_react.default.createElement("p", null, " ", newQuote), /*#__PURE__*/_react.default.createElement("p", null, QuoteAuthor)));
+};
+
+var _default = CreateQuote;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"../node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39126,6 +39158,8 @@ var _Users = _interopRequireDefault(require("./Users"));
 
 var _Calendar = _interopRequireDefault(require("./Calendar"));
 
+var _AddQuoteForm = _interopRequireDefault(require("./AddQuoteForm"));
+
 var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -39139,7 +39173,9 @@ function Routes() {
     to: "/users"
   }, "Users"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/calendar"
-  }, "Calendar"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }, "Calendar"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/addquote"
+  }, "Add quote"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/quotes",
     component: _Quotes.default
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
@@ -39148,12 +39184,15 @@ function Routes() {
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/calendar",
     component: _Calendar.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/addquote",
+    component: _AddQuoteForm.default
   })));
 }
 
 var _default = Routes;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./Quotes":"../src/Quotes.js","./Users":"../src/Users.js","./Calendar":"../src/Calendar.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"../src/App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Quotes":"../src/Quotes.js","./Users":"../src/Users.js","./Calendar":"../src/Calendar.js","./AddQuoteForm":"../src/AddQuoteForm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"../src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39290,7 +39329,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49543" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51757" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
