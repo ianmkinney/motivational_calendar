@@ -66,7 +66,7 @@ app.put('/motivation/:id', async(req, res) => {
 
 //Route to create add a quote to the db
 app.post('/motivation/add', async(req, res) => {
-   
+        // body.req
         await Motivation.create({ quote: 'Education is the most powerful weapon which you can use to change the world', author:'Nelson Mandela'})
         res.send(`New Quote Added`)  
   

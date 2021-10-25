@@ -3,9 +3,20 @@ import React, { useEffect, useState } from 'react';
 const CreateQuote = () =>{
 
   //creating a react hook to store the quote body
-  // const [newQuote,setNewQuote] = useStates('')
-  // cosnt [QuoteAuthor, setQuoteAuthor] = useState('')
+  const [quote,setNewQuote] = useState('')
+  const [author, setQuoteAuthor] = useState('')
   
+
+  const handleSubmit = (e)=>{
+
+    e.preventDefault() //going to stop the page from refresehing after submitting
+    
+    const addedQuote = {quote, author} //storing the new object before making the post request
+
+    fetch('/motivation/add')
+    
+
+  }
 
 
   return(
@@ -13,29 +24,40 @@ const CreateQuote = () =>{
       {/* Header for the form */}
       <h2> Add your quote below: </h2>
           {/* initializing the form */}
-        <form>
+        <form onSubmit= {handleSubmit}>
             
             {/* Adding field to input quote context */}
             <label> Add quote content:</label>
             <textarea
                 required
+                value = {quote}
+                // changing the state of quote to update when user inputs text
+                // using the e.target.value to target the even object which is the text area and the value within
+                onChange = {(e)=> setNewQuote (e.target.value)}  
                 
             />
 
             {/* adding field to add quote author */}
             <label> Quote author: </label>
-            <input type={Text}
+            <input 
             required 
-            // value = {QuoteAuthor}
-            // onChange ={ (e) => setQuoteAuthor(e.target.value)}
+            value = {author}
+            onChange ={ (e) => setQuoteAuthor(e.target.value)}
             />
+
+             {/* stretch goal--- add the current username to pop up below
+            <label>User Name: </label>
+            <select>
+              
+              <option value='anonymous'>Anonymous</option>
+            </select> */}
 
             {/* adding a submit button to save the changes */}
             <button> Submit </button>
 
             {/* testing to see if the setNewQuote works */}
-            <p> {newQuote}</p>
-            <p>{QuoteAuthor}</p>
+            <p> {quote}</p>
+            <p>{author}</p>
 
         </form>
     </div>
@@ -43,3 +65,5 @@ const CreateQuote = () =>{
 }
 
 export default CreateQuote
+
+
