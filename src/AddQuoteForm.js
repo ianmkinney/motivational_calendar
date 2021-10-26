@@ -9,20 +9,20 @@ const CreateQuote = () =>{
   const [author, setQuoteAuthor] = useState('')
   
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { //creating a function to be executed when the submit button is pressed
 
     e.preventDefault() //going to stop the page from refresehing after submitting
-      const newQuote = {quote,author}
+      const newQuote = {quote,author}  //created a variable to store the new objest values set by the user
         try {
-          const response = await fetch(`http://localhost:3000/motivation/add` ,{
-          method: 'POST',
+          const response = await fetch(`http://localhost:3000/motivation/add` ,{ //adding the route to be executed by the server
+          method: 'POST',  //the type of request
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(newQuote)
+          body: JSON.stringify(newQuote) //turning the new object into a string to pass through the server 
           }).then((res)=>{
-            console.log(res)
+            console.log(res) //logging success if the request went through with updating the database
           })
         }catch(err){
-          console.error(err)
+          console.error(err) //logging error if the request was unsuccessful
         }
   }
     
@@ -64,7 +64,7 @@ const CreateQuote = () =>{
             <button> Submit </button>
 
             {/* testing to see if the setNewQuote works */}
-            <p> {quote}</p>
+            <p> {quote}</p> 
             <p>{author}</p>
 
         </form>
