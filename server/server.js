@@ -7,13 +7,19 @@ const cors = require('cors')
 const seed = require('./seed')
 const { db } = require('./db')
 const { Motivation, User } = require('./models/index')
+const bodyParser = require('body-parser')
+const path = require ('path')
+const morgan = require('morgan')
+const parseJson = require('parse-json')
 
+app.use(express.static(path.join(__dirname, '..', 'public')))
 // use seed to populate database
 seed()
 
 // Use js libraries for server
 app.use(express.json())
 app.use(cors())
+app.use(morgan('dev'))
 
 /** Route for returning one random motivation */
 app.get('/getMotivation', async (req,res) => {
@@ -66,9 +72,15 @@ app.put('/motivation/:id', async(req, res) => {
 
 //Route to create add a quote to the db
 app.post('/motivation/add', async(req, res) => {
-        // body.req
-        await Motivation.create({ quote: 'Education is the most powerful weapon which you can use to change the world', author:'Nelson Mandela'})
-        res.send(`New Quote Added`)  
+       
+       const newQuote = req.body
+       
+       console.log(newQuote)
+        
+
+        Motivation.create({ quote: newQuote.quote, author: newQuote.author })
+        
+       return res.send(newQuote)  
   
 })
 

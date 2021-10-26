@@ -1,4 +1,6 @@
+import { contentType } from 'mime-types';
 import React, { useEffect, useState } from 'react';
+import { post } from 'request';
 
 const CreateQuote = () =>{
 
@@ -7,24 +9,30 @@ const CreateQuote = () =>{
   const [author, setQuoteAuthor] = useState('')
   
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = async (e) => {
 
     e.preventDefault() //going to stop the page from refresehing after submitting
-    
-    const addedQuote = {quote, author} //storing the new object before making the post request
-
-    fetch('/motivation/add')
-    
-
+      const newQuote = {quote,author}
+        try {
+          const response = await fetch(`http://localhost:3000/motivation/add` ,{
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(newQuote)
+          }).then((res)=>{
+            console.log(res)
+          })
+        }catch(err){
+          console.error(err)
+        }
   }
-
+    
 
   return(
     <div className= "CreateQuote">
       {/* Header for the form */}
       <h2> Add your quote below: </h2>
           {/* initializing the form */}
-        <form onSubmit= {handleSubmit}>
+        <form onSubmit={handleSubmit}>
             
             {/* Adding field to input quote context */}
             <label> Add quote content:</label>
@@ -65,5 +73,3 @@ const CreateQuote = () =>{
 }
 
 export default CreateQuote
-
-
