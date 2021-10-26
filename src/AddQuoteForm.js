@@ -1,6 +1,7 @@
 import { contentType } from 'mime-types';
 import React, { useEffect, useState } from 'react';
 import { post } from 'request';
+import { StyleSheet } from 'cssom';
 
 const CreateQuote = () =>{
 
@@ -21,17 +22,17 @@ const CreateQuote = () =>{
           body: JSON.stringify(newQuote) //turning the new object into a string to pass through the server 
           }).then((res)=>{
             console.log(res) //logging success if the request went through with updating the database
-            alert('Your quote has been added.')
+            alert(`Your quote has been added.\n 
+            Quote:${JSON.stringify(quote)}\n
+            Author:${JSON.stringify(author)}`)
           })
         }catch(err){
           console.error(err) //logging error if the request was unsuccessful
           alert('Unable to add your quote')
         }
   }
-    
-
   return(
-    <div className= "CreateQuote">
+    <div className= {CreateQuote} >
       {/* Header for the form */}
       <h2> Add your quote below: </h2>
           {/* initializing the form */}
@@ -70,7 +71,7 @@ const CreateQuote = () =>{
             </select> */}
 
             {/* adding a submit button to save the changes */}
-            <button> Submit </button>
+            <button style={{backgroundColor: "lightblue"}}> Submit </button>
             
 
         </form>

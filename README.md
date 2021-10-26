@@ -6,7 +6,7 @@ For this project, we created a calendar which displays a quote for each day sele
 We used React to build out our front-end components and CSS to style. For our backend we focused on using sqlite, sequelize, and express to build a database and server.
 
 >#### Current Project Status: 
->Currently, our team is focusing on integrating a sign-in feature where a user can tailor the calendar to their liking by adding quotes >and saving their favorites. 
+>Currently, our team is focusing on integrating a sign-in feature where a user can tailor the calendar to their liking by adding quotes and saving their favorites. 
 
 ### Meet the Team: 
 >Ayden Scott: Current Multiverse Apprentice working with McKinsey
