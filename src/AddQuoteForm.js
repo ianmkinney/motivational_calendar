@@ -1,6 +1,9 @@
 import { contentType } from 'mime-types';
 import React, { useEffect, useState } from 'react';
 import { post } from 'request';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Form, FormCheck, FloatingLabel, validated} from 'react-bootstrap';
 
 
 const CreateQuote = () =>{
@@ -31,37 +34,49 @@ const CreateQuote = () =>{
           alert('Unable to add your quote')
         }
   }
+
   return(
     <div className= "CreateQuote" >
-      {/* Header for the form */}
-      <h2> Add your quote below: </h2>
           {/* initializing the form */}
+        <Form validated={validated} onSubmit={handleSubmit}>
 
-          {/* Displaying the quote for the user to see how it will show display in the end
-          <h4>How your quote will be saved:</h4>
-          <p> "{quote}"</p> 
-          <p>-{author}</p> */}
+        <Form.Group className="mb-3">
 
-        <form onSubmit={handleSubmit}>
-            
             {/* Adding field to input quote context */}
-            <label> Add quote content:</label>
-            <textarea
+            <Form.Label>Enter your quote:</Form.Label>
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Quote"
+              className="mb-3"
+            >
+                <Form.Control type="textarea" placeholder="quote" rows={3}
                 required
                 value = {quote}
-                // changing the state of quote to update when user inputs text
-                // using the e.target.value to target the even object which is the text area and the value within
-                onChange = {(e)=> setNewQuote (e.target.value)}  
-                
-            />
+                onChange = {(e)=> setNewQuote (e.target.value)} 
+                />
+               
+
+            </FloatingLabel>
 
             {/* adding field to add quote author */}
-            <label> Quote author: </label>
+
+            <FloatingLabel controlId="floatingTextarea2" label="Author">
+                <Form.Control
+                as="textarea"
+                placeholder="Type the quote author in here"
+                style={{ height: '60px' }}
+                required
+                velue ={author}
+                onChange ={ (e) => setQuoteAuthor(e.target.value)}
+                 />
+            </FloatingLabel>
+
+            {/* <label> Quote author: </label>
             <input 
             required 
             value = {author}
             onChange ={ (e) => setQuoteAuthor(e.target.value)}
-            />
+            /> */}
 
              {/* stretch goal--- add the current username to pop up below
             <label>User Name: </label>
@@ -71,10 +86,10 @@ const CreateQuote = () =>{
             </select> */}
 
             {/* adding a submit button to save the changes */}
-            <button style={{backgroundColor: "lightblue"}}> Submit </button>
+            <Button variant="primary" > Submit </Button>
             
-
-        </form>
+        </Form.Group>
+        </Form>
     </div>
   )
 }

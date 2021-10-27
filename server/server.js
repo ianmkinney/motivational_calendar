@@ -56,7 +56,7 @@ app.get('/allUsers', async (req,res) => {
 
 //Route to assign a user to a quote //
 app.put('/motivation/:id', async(req, res) => {
-    let pk = req.params.id
+    let pk = req.body
     let motivation = await Motivation.findByPk(pk)
 
     
