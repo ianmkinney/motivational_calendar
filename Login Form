@@ -1,0 +1,46 @@
+import React, { useState } from 'react';
+
+
+
+function LoginForm({ Login, error}) {
+    const [details, setDetails] = useState({name: "", username: "", password: ""});
+
+    // submit handler - handles our submit
+    const submitHandler = e => {
+        e.preventDefault(); //stops page from rendering 
+
+        Login(details);
+    }
+
+    return (
+        <form onSubmit={submitHandler}>
+            <div ClassName="form-inner">
+                <h2>Login</h2>
+                {(error !== "") ? ( <div className="error">{error}</div> ) : ""}
+                <div className="form-group"> //created field to insert info
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} />
+                </div>
+                   <div className="form-group"> //created field to insert info
+                       <lable htmlFor="username">Username: </lable>
+                       <input type="username" name="username" id="username" onChange= {e =>  setDetails({...details, username: e.target.value})} value={details.username} />
+                        </div>
+                       
+                       <div className="form-group">
+                           <label htmlFor="password">Password: </label> //created field to insert info  
+                           <input type="password" name="password" id="password" onChange={e =>  setDetails({...details, name: e.target.value})} value={details.password} />
+                        </div>
+                        <p class="form__text"> // create forgot password link
+                            <a href="#" class="form__link">Forgot your Password?</a>
+                        </p>
+
+                        <p class="form__text"> // create dont't have an account link
+                            <a class="form__link" id="linkCreateAccount" >Don't have an account? Create account</a>
+                        </p>
+                        <input type="submit" value="LOGIN"/> 
+                </div>
+        </form>
+    )
+}
+
+export default LoginForm
