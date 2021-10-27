@@ -2,6 +2,7 @@ import { contentType } from 'mime-types';
 import React, { useEffect, useState } from 'react';
 import { post } from 'request';
 
+
 const CreateQuote = () =>{
 
   //creating a react hook to store the quote body
@@ -21,25 +22,25 @@ const CreateQuote = () =>{
           body: JSON.stringify(newQuote) //turning the new object into a string to pass through the server 
           }).then((res)=>{
             console.log(res) //logging success if the request went through with updating the database
-            alert('Your quote has been added.')
+            alert(`Your quote has been added.\n 
+            Quote:"${JSON.stringify(quote)}"
+            Author: ${JSON.stringify(author)}`)// will alert the user when the quote was added and display a copy of the quote & author
           })
         }catch(err){
           console.error(err) //logging error if the request was unsuccessful
           alert('Unable to add your quote')
         }
   }
-    
-
   return(
-    <div className= "CreateQuote">
+    <div className= "CreateQuote" >
       {/* Header for the form */}
       <h2> Add your quote below: </h2>
           {/* initializing the form */}
 
-          {/* Displaying the quote for the user to see how it will show display in the end */}
+          {/* Displaying the quote for the user to see how it will show display in the end
           <h4>How your quote will be saved:</h4>
           <p> "{quote}"</p> 
-          <p>-{author}</p>
+          <p>-{author}</p> */}
 
         <form onSubmit={handleSubmit}>
             
@@ -70,7 +71,7 @@ const CreateQuote = () =>{
             </select> */}
 
             {/* adding a submit button to save the changes */}
-            <button> Submit </button>
+            <button style={{backgroundColor: "lightblue"}}> Submit </button>
             
 
         </form>

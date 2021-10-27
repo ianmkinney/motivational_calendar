@@ -19,11 +19,15 @@ class myCalendar extends React.Component {
     })
   }
 
+  
   render() {
     return (
       <div>
         <h1>Motivational Calendar</h1>
         <p>Selected date: {this.state.date.toDateString()}</p>
+        <button >
+            Favorite Quote
+        </button>
         <p>{this.state.quote}</p>
         <p>- {this.state.author}</p>
         <Calendar onClickDay={this.handleClick}/>

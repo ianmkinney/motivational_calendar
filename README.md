@@ -6,7 +6,7 @@ For this project, we created a calendar which displays a quote for each day sele
 We used React to build out our front-end components and CSS to style. For our backend we focused on using sqlite, sequelize, and express to build a database and server.
 
 >#### Current Project Status: 
->Currently, our team is focusing on integrating a sign-in feature where a user can tailor the calendar to their liking by adding quotes >and saving their favorites. 
+>Currently, our team is focusing on integrating a sign-in feature where a user can tailor the calendar to their liking by adding quotes and saving their favorites. 
 
 ### Meet the Team: 
 >Ayden Scott: Current Multiverse Apprentice working with McKinsey
@@ -17,7 +17,7 @@ We used React to build out our front-end components and CSS to style. For our ba
 ## Project Details: 
 ### UML Diagram
 A breakdown of our thought process in planing and connecting the different components of the webapp together.
-[![Our Current UML Diagram for the project](https://drive.google.com/file/d/1n5eKQqKrnboGaC7VbB2WOr6PzeAnd7w8/view?usp=sharing)]
+[![Our Current UML Diagram for the project](https://drive.google.com/file/d/1mcZ3ASUfA2SQJdUDICVR22EZVM8ciDCS/view?usp=sharing)]
 
 ## Styling
 We chose to the color scheme below to create a relaxing experience for our users.
