@@ -5,7 +5,7 @@ table, tr, td {
     border-radius: 10px;
 }
 body {
-  justify-content: center;
+  text-align: center;
   color: lightblue;
   background-color: lightblue;
 }
@@ -13,17 +13,19 @@ button.block {
     width:50%;
 }
 
-
+.center {
+  text-align: center;
+  margin-left: 46%;
+}
 
 p{
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 h1 {
-    width: 50%;
     color: rgb(251, 238, 193);
-    display: flexbox;
-    justify-content: center;
+    text-align: center;
 }
 
 
@@ -174,6 +176,10 @@ a {
   }
   .react-calendar--selectRange .react-calendar__tile--hover {
     background-color: #e6e6e6;
+  }
+
+  .sticky-top {
+    padding-top: 85px;
   }
 
  
