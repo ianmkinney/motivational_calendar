@@ -13,12 +13,16 @@ const morgan = require('morgan')
 const parseJson = require('parse-json')
 
 app.use(express.static(path.join(__dirname, '..', 'public')))
+
+app.use(cors())
+
 // use seed to populate database
 seed()
 
 // Use js libraries for server
-app.use(express.json())
-app.use(cors())
+app.use(express.json({
+    type: ['application/json', 'text/plain']
+}))
 app.use(morgan('dev'))
 
 /** Route for returning one random motivation */
@@ -56,15 +60,20 @@ app.get('/allUsers', async (req,res) => {
 
 //Route to assign a user to a quote //
 app.put('/motivation/:id', async(req, res) => {
-    let pk = req.body
-    let motivation = await Motivation.findByPk(pk)
+
+    let quoteId = req.body.id
+    // let userId = req.body.UserId
+
+    console.log(quoteId)
+
+    let motivation = await Motivation.findByPk(quoteId)
 
     
     console.log('Here is your motivation:', motivation)
 
     //let captureduserId = req.body.() &&& then pass it into the UserId below
     await Motivation.update({ UserId: 1 }, 
-        {where:{ id: pk}})
+        {where:{ id:  quoteId}})
     
     return res.json(motivation)
 

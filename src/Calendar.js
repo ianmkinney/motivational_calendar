@@ -4,22 +4,32 @@ import Calendar from 'react-calendar';
 
 class myCalendar extends React.Component {
   
-  state = {
-    date:new Date(),
-    quote: "",
-    author: "",
-    id: 0
-  };
+  constructor(props) {
+    super();
+    this.state = {
+      date:new Date(),
+      quote: "",
+      author: "",
+      id: 0
+      //userId: 1
+    }
+      this.handleClick = this.handleClick.bind(this)
+      this.favButton = this.favButton.bind(this)
+  }
 
+ //when the user logs in, pass down their id through props to this component
   handleClick = async (d) => {
     const response = await fetch("http://localhost:3000/getMotivation")
+    //const responseUser = await fetch(`http://localhost:3000/getUser/${props.userId}`) -- stretch goal
     const responseJSON = await response.json()
+    //const responseJSON2 = await responseUser.json() -- stretch goal 
     console.log(responseJSON.quote)
     this.setState({
       date:d,
       quote:responseJSON.quote,
       author:responseJSON.author,
       id: responseJSON.id
+      //userId: userId //responseJSON2 - change to this when focusing on stretch goal
     })
     console.log("QUOTE ID",this.state.id)
   }
@@ -29,16 +39,22 @@ class myCalendar extends React.Component {
   
     e.preventDefault()
 
-    console.log("FAV BUTTON QUOTE ID",this.state.id)
-    console.log("What is this", e)
+    //console.log("FAV BUTTON QUOTE ID",this.state.id)
+ 
+    const data = this.state
 
-    const response = await fetch('http://localhost:3000/motivation/:id', {
+   //console.log('JSON STRINGIGYYY', typeof JSON.stringify(data)) -- testing the type of data being passed
+
+    const response = await fetch(`http://localhost:3000/motivation/${this.state.id}`, { //using the put request route to assign a user to a quote
       method: 'PUT',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(e)
+      header: {
+        'Content-Type': 'application/json'
+      },
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(data)  //changing the data to a string so it can be passed through the request
     }).then((res)=>{
-      console.log(res)
-      alert(`Quote has been added to favorites`)
+      console.log(res)//logging the status of the request
+      alert(`Quote has been added to favorites!`)//logging a success alert
     })
   }
 
@@ -46,7 +62,7 @@ class myCalendar extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="sticky-top">
         <h1>Motivational Calendar</h1>
         <p>Selected date: {this.state.date.toDateString()}</p>
         <button  onClick={this.favButton}>

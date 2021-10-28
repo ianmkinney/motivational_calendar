@@ -36,14 +36,16 @@ const CreateQuote = () =>{
   }
 
   return(
-    <div className= "CreateQuote" >
+    <div className= "CreateQuote" className="sticky-top">
           {/* initializing the form */}
-        <Form validated={validated} onSubmit={handleSubmit}>
-
+          <Form onSubmit={handleSubmit}>
+          
         <Form.Group className="mb-3">
-
+            <br/>
+            <br/>
             {/* Adding field to input quote context */}
             <Form.Label>Enter your quote:</Form.Label>
+           
             <FloatingLabel
               controlId="floatingInput"
               label="Quote"
@@ -71,22 +73,8 @@ const CreateQuote = () =>{
                  />
             </FloatingLabel>
 
-            {/* <label> Quote author: </label>
-            <input 
-            required 
-            value = {author}
-            onChange ={ (e) => setQuoteAuthor(e.target.value)}
-            /> */}
-
-             {/* stretch goal--- add the current username to pop up below
-            <label>User Name: </label>
-            <select>
-              
-              <option value='anonymous'>Anonymous</option>
-            </select> */}
-
-            {/* adding a submit button to save the changes */}
-            <Button variant="primary" > Submit </Button>
+           
+            <Button type="submit"> Submit </Button>
             
         </Form.Group>
         </Form>
