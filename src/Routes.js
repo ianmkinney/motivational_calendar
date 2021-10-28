@@ -21,13 +21,13 @@ function Routes() {
             {/** Defining the Link (clickable) */}
             <Link to="/quotes">Quotes</Link>
             <Link to="/users">Users</Link>
-            <Link to="/calendar">Calendar</Link>
+            <Link to="/">Calendar</Link>
             <Link to="/addquote">Add quote</Link>
             {/** Defining the switches, render the matching components */}
             <Switch>
                 <Route path="/quotes" component={Quotes}/>
                 <Route path="/users" component={Users}/>
-                <Route path="/calendar" component={myCalendar}/>
+                <Route path="/" component={myCalendar}/>
                 <Route path="/addquote" component = {CreateQuote}/>
             </Switch>
         </Router>
