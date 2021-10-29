@@ -11,7 +11,7 @@ We used React to build out our front-end components along with Bootstrap and CSS
 ## Project Details: 
 ### UML Diagram
 A breakdown of our thought process in planing and connecting the different components of the webapp together.
-![Our Current UML Diagram for the project](https://drive.google.com/file/d/1mcZ3ASUfA2SQJdUDICVR22EZVM8ciDCS/view?usp=sharing)
+[Our Current UML Diagram for the project](https://drive.google.com/file/d/1mcZ3ASUfA2SQJdUDICVR22EZVM8ciDCS/view?usp=sharing)
 
 
 ##  Technologies
@@ -33,14 +33,14 @@ A breakdown of our thought process in planing and connecting the different compo
 > - Parcel-bundler - v. 1.12.5
 
 ## Set Up: 
-To run this locally, install it using npm:
-   `$ cd ../project_name <br> 
-    $ npm install <br>
-    $npm install cors express morgan nodemon react-calendar react-router-dom sequelize sqlite3 react <br>
-    $npm install --save-dev parcel-bundler <br>
-    You will need two terminals open to start the back end and the front end: <br>
-    $npm run start (to start the server) <br>
-    $npm run start-dev (to start the front end) <br>`
+To run this locally, install it using npm:<br>
+   `$ cd ../project_name 
+    $ npm install 
+    $npm install cors express morgan nodemon react-calendar react-router-dom sequelize sqlite3 react 
+    $npm install --save-dev parcel-bundler 
+    You will need two terminals open to start the back end and the front end: 
+    $npm run start (to start the server) 
+    $npm run start-dev (to start the front end)`
 
 
 ### Meet the Team: 
