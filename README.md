@@ -11,7 +11,7 @@ We used React to build out our front-end components along with Bootstrap and CSS
 ## Project Details: 
 ### UML Diagram
 A breakdown of our thought process in planing and connecting the different components of the webapp together.
-[Our Current UML Diagram for the project](https://drive.google.com/file/d/1mcZ3ASUfA2SQJdUDICVR22EZVM8ciDCS/view?usp=sharing)
+![uml diagram](./images/uml-diagram.png)
 
 
 ##  Technologies
