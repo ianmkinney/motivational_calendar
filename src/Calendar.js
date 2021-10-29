@@ -1,5 +1,7 @@
 import { id } from 'postcss-selector-parser';
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 import Calendar from 'react-calendar';
 
 class myCalendar extends React.Component {
@@ -15,6 +17,8 @@ class myCalendar extends React.Component {
     }
       this.handleClick = this.handleClick.bind(this)
       this.favButton = this.favButton.bind(this)
+
+      this.handleClick(this.state.date)
   }
 
  //when the user logs in, pass down their id through props to this component
@@ -67,9 +71,9 @@ class myCalendar extends React.Component {
         <p>Selected date: {this.state.date.toDateString()}</p>
         <p>{this.state.quote}</p>
         <p>- {this.state.author}</p>
-        <button  class="center" onClick={this.favButton}>
+        <Button  type="button" class="btn btn-outline-primary" onClick={this.favButton}>
             Favorite Quote
-        </button>
+        </Button>
         <Calendar onClickDay={this.handleClick}/>
       </div>
     );
