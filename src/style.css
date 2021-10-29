@@ -16,7 +16,6 @@ button.block {
     width:50%;
 }
 
-<<<<<<< HEAD
 .center {
   text-align: center;
   margin-left: 46.5%;
@@ -26,16 +25,12 @@ button.block {
   text-align: center;
 }
 
-=======
->>>>>>> 347aea6a6861959c6d6cd5d0b8b62d16d9cbf84f
 p{
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
 h1 {
-    
-  width: 0%;
   color: rgb(251, 238, 193);
   text-align: center;
 }
