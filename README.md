@@ -34,13 +34,13 @@ A breakdown of our thought process in planing and connecting the different compo
 
 ## Set Up: 
 To run this locally, install it using npm:
-    - $ cd ../project_name <br>
-    - $ npm install <br>
-    - $npm install cors express morgan nodemon react-calendar react-router-dom sequelize sqlite3 react <br>
-    - $npm install --save-dev parcel-bundler <br>
-    - You will need two terminals open to start the back end and the front end: <br>
-    - $npm run start (to start the server) <br>
-    - $npm run start-dev (to start the front end) <br>
+   `$ cd ../project_name <br> 
+    $ npm install <br>
+    $npm install cors express morgan nodemon react-calendar react-router-dom sequelize sqlite3 react <br>
+    $npm install --save-dev parcel-bundler <br>
+    You will need two terminals open to start the back end and the front end: <br>
+    $npm run start (to start the server) <br>
+    $npm run start-dev (to start the front end) <br>`
 
 
 ### Meet the Team: 
