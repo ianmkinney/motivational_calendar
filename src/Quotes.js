@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Table  } from 'react-bootstrap';
+
 
 function Quotes() {
     // React hook
@@ -30,20 +33,24 @@ function Quotes() {
 
     return(
         <div class="sticky-top">
-            <h1>Quotes:</h1>
+            <h1 class="auto" >Quotes:</h1>
             <div class="center-quotes">
-                <table>
-                    <tr>
+                <Table class="table table-hover">
+                <thead>
+                    <tr  class="table-info">
                         <td>Quote</td>
                         <td>Author</td>
                     </tr>
+                </thead>
+                <tbody>
                     {quotes.map((quote) => {
-                    return <tr>
+                    return <tr class="table-secondary">
                             <td>{quote.quote}</td>
                             <td>{quote.author}</td>
                         </tr>
                 })} 
-                </table>
+                </tbody>
+                </Table>
             </div>
         </div>
     )

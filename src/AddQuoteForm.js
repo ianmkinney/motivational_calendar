@@ -42,7 +42,7 @@ const CreateQuote = () =>{
           
         <Form.Group className="mb-3">
             <br/>
-            <br/>
+            
             {/* Adding field to input quote context */}
             <Form.Label>Enter your quote:</Form.Label>
            
@@ -70,7 +70,7 @@ const CreateQuote = () =>{
                  />
             </FloatingLabel>
 
-           
+            <br/>
             <Button type="submit"> Submit </Button>
             
         </Form.Group>
