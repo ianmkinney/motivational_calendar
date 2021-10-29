@@ -12,6 +12,9 @@ We used React to build out our front-end components along with Bootstrap and CSS
 ### UML Diagram
 A breakdown of our thought process in planing and connecting the different components of the webapp together.
 ![uml diagram](./images/uml-diagram.png)
+### MVP
+The MVP of this project is the motivational calendar. This is an interactive calendar that allows the user the click a dat and recieve a random motivational quote. The user can favorite the quote which will save it to their user. 
+![calendar](./images/calendar.png)
 
 
 ##  Technologies
