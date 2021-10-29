@@ -93,6 +93,22 @@ app.post('/motivation/add', async(req, res) => {
   
 })
 
+
+app.post('/login', async (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    
+    const login = await User.findOne({where: {username: username, password: password}})
+
+    if(login === null) {
+        console.log("invalid login")
+        res.send("invalid login")
+    } else {
+        console.log(`${req.body.name} logged in!`)
+        res.send("valid login")
+    }
+})
+
 //set up app to listen on set port
 app.listen( PORT, () => {
     console.log(`Your server is now listening to port ${PORT}`)

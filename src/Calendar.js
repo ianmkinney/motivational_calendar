@@ -65,7 +65,7 @@ class myCalendar extends React.Component {
       <div className="sticky-top">
         <h1>Motivational Calendar</h1>
         <p>Selected date: {this.state.date.toDateString()}</p>
-        <button  onClick={this.favButton}>
+        <button  class="center" onClick={this.favButton}>
             Favorite Quote
         </button>
         <p>{this.state.quote}</p>

@@ -5,6 +5,7 @@ import Quotes from './Quotes'
 import Users from './Users'
 import myCalendar from './Calendar'
 import CreateQuote from './AddQuoteForm'
+import LoginForm from './LoginForm'
 
 // import react-dom-router dependencies
 import {
@@ -23,12 +24,14 @@ function Routes() {
             <Link to="/users">Users</Link>
             <Link to="/">Calendar</Link>
             <Link to="/addquote">Add quote</Link>
+            <Link to="/login">Log in</Link>
             {/** Defining the switches, render the matching components */}
             <Switch>
-                <Route path="/quotes" component={Quotes}/>
-                <Route path="/users" component={Users}/>
-                <Route path="/" component={myCalendar}/>
-                <Route path="/addquote" component = {CreateQuote}/>
+                <Route exact path="/quotes" component={Quotes}/>
+                <Route exact path="/users" component={Users}/>
+                <Route exact path="/" component={myCalendar}/>
+                <Route exact path="/addquote" component = {CreateQuote}/>
+                <Route exact path="/login" component = {LoginForm}/>
             </Switch>
         </Router>
     )

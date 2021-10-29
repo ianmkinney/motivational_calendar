@@ -29,7 +29,7 @@ function Quotes() {
 
 
     return(
-        <div>
+        <div class="sticky-top">
             <h1>Quotes:</h1>
             <table>
                 <tr>
