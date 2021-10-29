@@ -3,13 +3,16 @@ table, tr, td {
     width: 50%;
     text-align: center;
     border-radius: 10px;
-    margin-left: 25%;
 }
 
 body {
   text-align: center;
   color: lightblue;
   background-color: lightblue;
+}
+
+.center-quotes {
+  left: 0;
 }
 
 button.block {
