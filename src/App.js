@@ -8,7 +8,7 @@ function App() {
     <div className="App">
         <Navbar bg="dark" variant="dark" fixed="top" >
           <Container>
-            <Navbar.Brand href="#home">Motivational Calendar</Navbar.Brand>
+            <Navbar.Brand href="http://localhost:1234/">Motivational Calendar</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="http://localhost:1234/">Calendar</Nav.Link>
               <Nav.Link href="http://localhost:1234/quotes">Quotes</Nav.Link>
