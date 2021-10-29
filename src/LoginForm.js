@@ -7,7 +7,7 @@ function LoginForm({ Login, error }) {
    const submitHandler = async (e) => {
         e.preventDefault();
         const data = details
-        console.log('THIS IS THE DATA', data)
+        //console.log('THIS IS THE DATA', data)
         try {
             const response = await fetch('http://localhost:3000/login', {
                 method: 'POST',
@@ -16,10 +16,17 @@ function LoginForm({ Login, error }) {
                 },
                 referrerPolicy: 'no-referrer',
                 body: JSON.stringify(data)
+            }).then((res)=>{
+                console.log(res)
+                if(res.status === 200) {
+                    alert(`Successfully logged in as ${data.name}`)
+                } else if(res.status === 404) {
+                    alert('Invalid username or password!')
+                }
             })
         } catch(err) {
             console.error(err)
-            alert('Invalid login')
+            alert('Server error')
         }
     }
 

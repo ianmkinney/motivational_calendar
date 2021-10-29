@@ -103,11 +103,12 @@ app.post('/login', async (req, res) => {
     console.log(login)
 
     if(login === null) {
-        console.log("invalid login")
-        res.send("invalid login")
+        res.status(404)
+        return res.send()
     } else {
         console.log(`${req.body.name} logged in!`)
-        res.send("valid login")
+        res.status(200)
+        return res.send()
     }
 })
 

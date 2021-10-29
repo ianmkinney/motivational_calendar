@@ -16,7 +16,7 @@ button.block {
 
 .center {
   text-align: center;
-  margin-left: 46%;
+  margin-left: 46.5%;
 }
 
 .center-login {
@@ -186,13 +186,6 @@ a {
   .sticky-top {
     padding-top: 85px;
   }
-
-input, button {
-    appearance: none;
-    background: none;
-    border: none;
-    outline: none;
-}
 
 form {
     display: block;
