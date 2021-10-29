@@ -25,31 +25,33 @@ function LoginForm({ Login, error }) {
 
 
     return (
-        <form class="sticky-top" onSubmit={submitHandler}>
-            <div className="form-inner">
-                <h2>Login</h2>
-                {(error !== "") ? ( <div className="error">{error}</div> ) : ""}
-                <div className="form-group">
-                    <label>Name:</label>
-                    <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} />
-                </div>
-                   <div className="form-group">
-                       <label>Username: </label>
-                       <input type="text" name="username" id="username" onChange={e => setDetails({...details, username: e.target.value})} value={details.username} />
-                       </div>
-                       <div className="form-group">
-                           <label htmlFor="password">Password: </label>
-                           <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password} />
+        <div class="center-login">
+            <form class="sticky-top" onSubmit={submitHandler}>
+                <div className="form-inner">
+                    <h2>Login</h2>
+                    {(error !== "") ? ( <div className="error">{error}</div> ) : ""}
+                    <div className="form-group">
+                        <label>Name:</label>
+                        <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} />
+                    </div>
+                    <div className="form-group">
+                        <label>Username: </label>
+                        <input type="text" name="username" id="username" onChange={e => setDetails({...details, username: e.target.value})} value={details.username} />
                         </div>
-                        <p className="form__text">
-                            <a href="#" className="form__link">Forgot your Password?</a>
-                        </p>
-                        <p className="form__text">
-                            <a className="form__link" id="linkCreateAccount" >Don't have an account? Create account</a>
-                        </p>
-                        <input type="submit"/>
-                </div>
-        </form>
+                        <div className="form-group">
+                            <label htmlFor="password">Password: </label>
+                            <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password} />
+                            </div>
+                            <p className="form__text">
+                                <a href="#" className="form__link">Forgot your Password?</a>
+                            </p>
+                            <p className="form__text">
+                                <a className="form__link" id="linkCreateAccount" >Don't have an account? Create account</a>
+                            </p>
+                            <input type="submit"/>
+                    </div>
+            </form>
+        </div>
     )
 }
 export default LoginForm

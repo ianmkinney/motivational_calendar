@@ -100,6 +100,8 @@ app.post('/login', async (req, res) => {
     
     const login = await User.findOne({where: {username: username, password: password}})
 
+    console.log(login)
+
     if(login === null) {
         console.log("invalid login")
         res.send("invalid login")

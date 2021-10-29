@@ -31,18 +31,20 @@ function Quotes() {
     return(
         <div class="sticky-top">
             <h1>Quotes:</h1>
-            <table>
-                <tr>
-                    <td>Quote</td>
-                    <td>Author</td>
-                </tr>
-                {quotes.map((quote) => {
-                return <tr>
-                        <td>{quote.quote}</td>
-                        <td>{quote.author}</td>
-                       </tr>
-            })} 
-            </table>
+            <div class="center-quotes">
+                <table>
+                    <tr>
+                        <td>Quote</td>
+                        <td>Author</td>
+                    </tr>
+                    {quotes.map((quote) => {
+                    return <tr>
+                            <td>{quote.quote}</td>
+                            <td>{quote.author}</td>
+                        </tr>
+                })} 
+                </table>
+            </div>
         </div>
     )
 }
