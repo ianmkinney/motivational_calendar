@@ -46,11 +46,8 @@ const CreateQuote = () =>{
             {/* Adding field to input quote context */}
             <Form.Label>Enter your quote:</Form.Label>
            
-            <FloatingLabel
-              controlId="floatingInput"
-              label="Quote"
-              className="mb-3"
-            >
+            <FloatingLabel controlId="floatingInput" label="Quote" className="mb-3">
+                
                 <Form.Control type="textarea" placeholder="quote" rows={3}
                 required
                 value = {quote}
